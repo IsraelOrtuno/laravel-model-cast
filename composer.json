@@ -1,0 +1,45 @@
+{
+  "name": "devio/laravel-model-cast",
+  "description": "",
+  "license": "MIT",
+  "keywords": [
+    "spatie",
+    "laravel-sluggable"
+  ],
+  "authors": [
+    {
+      "name": "Israel Ortuño",
+      "email": "israel@devio.es"
+    }
+  ],
+  "homepage": "https://github.com/IsraelOrtuno/laravel-model-cast",
+  "require": {
+    "php": "^8.0",
+    "illuminate/database": "^10.0",
+    "illuminate/support": "^10.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.23|^7.0|^8.0",
+    "pestphp/pest": "^1.20"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Devio\\ModelCast\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Devio\\ModelCast\\Tests\\": "tests"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest"
+  }
+}
