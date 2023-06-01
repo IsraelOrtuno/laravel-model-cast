@@ -25,6 +25,15 @@ trait CastsModel
         return new ($this->getCastableModelClass());
     }
 
+    public function getTable(): string
+    {
+        if (static::class == $this->getCastableModelClass()) {
+            return parent::getTable();
+        }
+
+        return $this->getCastableModel()->getTable();
+    }
+
     public function getForeignKey(): string
     {
         if (static::class == $this->getCastableModelClass()) {

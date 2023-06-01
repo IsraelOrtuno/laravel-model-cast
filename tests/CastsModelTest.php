@@ -35,9 +35,15 @@ it('casts a model when creating', function () {
 });
 
 it('provides the foreign key of the castable class', function () {
-    $model = DeviceModelTest::create(['name' => 'phone']);
+    $model = new DeviceModelTest();
 
     expect($model->getForeignKey())->toBe('device_model_test_id');
+});
+
+it('provides the table name of the castable class', function () {
+    $model = new PhoneDeviceModelTest();
+
+    expect($model->getTable())->toBe('device_models');
 });
 
 it('should implement Castable interface', function () {
