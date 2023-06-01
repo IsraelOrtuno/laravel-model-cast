@@ -45,9 +45,3 @@ it('provides the table name of the castable class', function () {
 
     expect($model->getTable())->toBe('device_models');
 });
-
-it('should implement Castable interface', function () {
-    new class () extends Model {
-        use CastsModel;
-    };
-})->throws(\InvalidArgumentException::class);

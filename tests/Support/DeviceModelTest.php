@@ -2,11 +2,10 @@
 
 namespace Devio\ModelCast\Tests\Support;
 
-use Devio\ModelCast\Castable;
 use Devio\ModelCast\CastsModel;
 use Illuminate\Database\Eloquent\Model;
 
-class DeviceModelTest extends Model implements Castable
+class DeviceModelTest extends Model
 {
     use CastsModel;
 

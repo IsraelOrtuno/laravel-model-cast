@@ -8,19 +8,14 @@ trait CastsModel
 {
     public bool $isCastedModel = false;
 
-    public static function bootCastsModel()
-    {
-        if (!new static instanceof Castable) {
-            throw new \InvalidArgumentException('CastsModel trait should implement Castable interface.');
-        }
-    }
+    abstract public function getCastedModelClass(array $attributes): string|null;
 
     public function getCastableModelClass(): string
     {
         return self::class;
     }
 
-    public function getCastableModel():self
+    public function getCastableModel(): self
     {
         return new ($this->getCastableModelClass());
     }
