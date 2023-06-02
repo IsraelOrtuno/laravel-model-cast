@@ -2,11 +2,9 @@
 
 namespace Devio\ModelCast\Tests;
 
-use Devio\ModelCast\CastsModel;
 use Devio\ModelCast\Tests\Support\TabletDeviceModelTest;
 use Devio\ModelCast\Tests\Support\PhoneDeviceModelTest;
 use Devio\ModelCast\Tests\Support\DeviceModelTest;
-use Illuminate\Database\Eloquent\Model;
 
 it('casts a model when retrieving a single record', function () {
     DeviceModelTest::create(['name' => 'phone']);
