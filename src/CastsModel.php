@@ -38,6 +38,15 @@ trait CastsModel
         return $this->getCastableModel()->getForeignKey();
     }
 
+    public function getMorphClass()
+    {
+        if (static::class == $this->getCastableModelClass()) {
+            return parent::getMorphClass();
+        }
+
+        return $this->getCastableModel()->getMorphClass();
+    }
+
     public function newInstance($attributes = [], $exists = false)
     {
         if (!count($attributes) || $this->isCastedModel) {

@@ -43,3 +43,9 @@ it('provides the table name of the castable class', function () {
 
     expect($model->getTable())->toBe('device_models');
 });
+
+it('provides castable model morph class', function() {
+    $model = new PhoneDeviceModelTest();
+
+    expect($model->getMorphClass())->toBe($model->getCastableModelClass());
+});
