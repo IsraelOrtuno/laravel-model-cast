@@ -5,6 +5,7 @@ namespace Devio\ModelCast\Tests;
 use Devio\ModelCast\Tests\Support\TabletDeviceModelTest;
 use Devio\ModelCast\Tests\Support\PhoneDeviceModelTest;
 use Devio\ModelCast\Tests\Support\DeviceModelTest;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 it('casts a model when retrieving a single record', function () {
     DeviceModelTest::create(['name' => 'phone']);
@@ -44,8 +45,18 @@ it('provides the table name of the castable class', function () {
     expect($model->getTable())->toBe('device_models');
 });
 
-it('provides castable model morph class', function() {
+it('provides castable model morph class by default', function () {
     $model = new PhoneDeviceModelTest();
 
     expect($model->getMorphClass())->toBe($model->getCastableModelClass());
+});
+
+it('provides casted model morph class when present in morph map', function () {
+    Relation::morphMap([
+        'tablet' => TabletDeviceModelTest::class
+    ]);
+
+    $model = new TabletDeviceModelTest();
+
+    expect($model->getMorphClass())->toBe('tablet');
 });

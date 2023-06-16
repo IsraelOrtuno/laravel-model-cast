@@ -44,6 +44,12 @@ trait CastsModel
             return parent::getMorphClass();
         }
 
+        $morphClass = parent::getMorphClass();
+
+        if ($morphClass != static::class) {
+            return $morphClass;
+        }
+
         return $this->getCastableModel()->getMorphClass();
     }
 
