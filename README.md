@@ -5,7 +5,7 @@ This package allows you to cast entire Eloquent models. Just like Eloquent's bui
 Cast a base Eloquent model into class model which will share all its attributes but may have a different configuration or relationships. The casting occurs automatically when fetching from database. Here is a very basic example of how this may work:
 
 ```php
-class Car extends Model implements Castable
+class Car extends Model
 {
   use CastsModel;
   // ...
@@ -36,7 +36,7 @@ Let's use cars in our example. `Car` will be our generic model and `TeslaCar` an
 The base model should just use the `CastsModel` trait and implement the `getCastedModelClass` method which will be responsible of resolving which class should be this model be casted to based on its attributes data.
 
 ```php
-class Car extends Model implements Castable 
+class Car extends Model
 {
   use CastsModel;
   
