@@ -3,8 +3,9 @@
   "description": "",
   "license": "MIT",
   "keywords": [
-    "spatie",
-    "laravel-sluggable"
+    "laravel",
+    "cast",
+    "eloquent"
   ],
   "authors": [
     {
