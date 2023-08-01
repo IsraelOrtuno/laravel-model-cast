@@ -85,6 +85,10 @@ trait CastsModel
 
     public function forceCast(): static
     {
-        return $this->newInstance($this->attributesToArray(), $this->exists);
+        $model = $this->newInstance($this->getAttributes(), $this->exists);
+
+        $model->setRawAttributes($this->attributesToArray());
+
+        return $model;
     }
 }
