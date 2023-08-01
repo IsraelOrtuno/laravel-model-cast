@@ -60,3 +60,10 @@ it('provides casted model morph class when present in morph map', function () {
 
     expect($model->getMorphClass())->toBe('tablet');
 });
+
+it('forces model casting', function () {
+    $model = (new DeviceModelTest(['name' => 'phone']));
+    $model = $model->forceCast();
+
+    expect($model)->toBeInstanceOf(PhoneDeviceModelTest::class);
+});

@@ -82,4 +82,9 @@ trait CastsModel
 
         return $instance->newFromBuilder($attributes, $connection);
     }
+
+    public function forceCast(): static
+    {
+        return $this->newInstance($this->attributesToArray(), $this->exists);
+    }
 }
